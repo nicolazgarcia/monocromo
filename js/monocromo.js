@@ -19,7 +19,7 @@ $(document).ready(function() {
 			duration: 800
 		});
 		return false;
-	});	
+	});
     $('.slideshow').each(function() {
     	var $this = $(this);
     	$this.cycle({
@@ -38,14 +38,26 @@ $(document).ready(function() {
 		fx: 	 'fade',
 		speed:   1000,
 		timeout: 3000,
-		next:    '.about'
+		next:    'section.about'
 	});
+	/*
 	var size = function() {
        var newHeight = $(window).height();
         $('article.project').height(newHeight);
      }
 	$(window).on('resize', size);
     size();
+	*/
+	$(window).scroll(function() {		
+	    var winHeight = $(window).height();
+        var scrolled = $(window).scrollTop() > winHeight;
+
+        if (scrolled) {
+          $('.nav_projects').css({'display' : 'block', 'bottom' : '-50px', 'position' : 'fixed'}).animate({bottom: '50'},300);
+        } else {
+          $('.nav_projects').fadeOut();
+        }
+      });
 	
 	var next;
 	$('.nextproject').click(function() {
@@ -57,12 +69,13 @@ $(document).ready(function() {
     $('html,body').scrollTo(next , 1000, {margin:true} );
 	return false;
 	});
-	
+	/*
 	$('.prev, .next').click(function () {
 		var $parent = $(this).parents('.project');					
 		$.scrollTo($parent, 1000);
 		
 	});
+	*/
 
 
    /* 

@@ -4,13 +4,103 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>El Monocromo</title>
 <link rel="stylesheet" type="text/css" href="css/global.css" media="all" />
+<style type="text/css">
+
+/*---- project slideshow ----*/
+.project_slideshow .prev,
+.project_slideshow .next {
+	width:28px;
+	height:0;
+	padding-top:32px;
+	display:block;
+	overflow:hidden;
+	background-image:url(img/sprite_.png);
+	position:absolute;
+	top:50%;
+	margin:0 -16px;
+	z-index:5;
+	}
+.project_slideshow .prev {
+	background-position:0 -195px;
+	left:32px;
+	}
+.project_slideshow .next {
+	background-position:0 -235px;
+	right:32px;
+	}
+.project_slideshow .prev:hover { left:24px;}
+.project_slideshow .next:hover { right:24px;}
+
+.project.no-slide .prev,
+.project.no-slide .next {
+	display:none;
+	}
+.nextproject {
+	width:26px;
+	height:0;
+	padding-top:17px;
+	display:block;
+	overflow:hidden;
+	background:url(img/sprite_.png) 0 -275px;
+	left:50%;
+	margin:0 13px;
+	position: absolute; 
+	bottom:14px;
+	z-index:10;
+	}
+.nextproject:hover { bottom:10px;}
+section.projects {
+	margin:0;	
+	color:#FFF;
+	}
+article.project {
+	position:relative;
+	display:block;
+	overflow:hidden;
+	-webkit-transition:opacity 1000ms ease;
+	-moz-transition:opacity 1000ms ease;
+	-o-transition:opacity 1000ms ease;
+	transition:opacity 1000ms ease;
+	/*
+	-webkit-transition:opacity 500ms ease-in-out;
+	-moz-transition:opacity 500ms ease-in-out;
+	-o-transition:opacity 500ms ease-in-out;
+	transition:opacity 500ms ease-in-out;
+	*/
+	}	
+article.project header h3 {
+	position:absolute;
+	z-index:10;
+	font-weight:bold;
+	font-size:35px;
+	margin:93px -150px 0;
+	left:50%;
+	width:300px;
+	text-align:center;
+	}
+.project_slideshow .slideshow .slide {
+	/*
+	background-attachment:fixed;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	background-position:center center;
+	background-repeat: no-repeat;
+	*/
+	max-height:1090px;
+	position:relative;
+	width:100%;
+	
+	}
+</style>
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body class="project">
 <nav id="inter">
   <ul class="nav">
     <li class="sub">
-     <a href="#">work</a>
+     <a href="work.html">work</a>
       <ul id="filter" class="sub">
         <li><a data-filter="featured" href="#">featured</a> &frasl;</li>
         <li><a data-filter="web" href="#">web</a> &frasl;</li>
@@ -19,14 +109,14 @@
         <li><a data-filter="all" href="#">all</a></li>
       </ul>
     </li>
-    <li><a href="#">about</a></li>
-    <li><a href="#">blog</a></li>
-    <li><a href="#">contact</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="blog.html">blog</a></li>
+    <li><a href="contact.html">contact</a></li>
   </ul>
 </nav>
 <section id="mono_options">
   <header>
-    <h1 class="logo">El Monocromo</h1>
+    <h1 class="logo"><a href="index.html">El Monocromo</a></h1>
   </header>
   <ul class="language">
     <li>english</li>
@@ -46,7 +136,7 @@
     <div class="slideshow">
     
       <div class="slide">
-        <div class="content">
+        <div class="content large">
           <h4>Political campaign for PDA candidate Aurelio Suarez running for Bogotás Mayor Ofﬁce.</h4>
           <p>Seeked a difference between the party's past campaigns, being able to use the poster as the main aspect of the campaign, and reach every single corner (and wall) of the city .Yellow and black, two initial conditions.</p>
           <q>Design director: Juan Pablo Mejía / Designers: Santiago Reyes, Nicolás Galeano, Juan Pablo Mejía / Photography: Kai Van Tongeren / Production: Ana Montenegro / Content & Direction: Alexandra Posada & Juan Pablo Fernández. <br>
@@ -78,7 +168,7 @@
     <div class="slideshow">
     
       <div class="slide">
-        <div class="content">
+        <div class="content large">
           <h4>A series of nine newspapers that deal with crisis, that seek to establish a direct connection between Bogota's Mayor Ofﬁce and its people. Chronicles, articles, infographics, interviews and Mayor Clara</h4>
           <p>Así está Bogotá, Un Pacto con Bogotá, Un patrimonio de Bogotá, Ciudad Mundial Bogotá, La salud en Bogotá, El metro de Bogotá, Ciudad de derechos Bogotá, Un plan para Bogotá, Las cuentas claras Bogotá </p>
           <q>Design director: Juan Pablo Mejía / Designers: Santiago Reyes, Nicolás Galeano, Juan Pablo Mejía / Photography: Kai Van Tongeren / Production: Ana Montenegro / Content & Direction: Alexandra Posada & Juan Pablo Fernández. 2011.</q> 
@@ -108,7 +198,7 @@
     <div class="slideshow">
     
       <div class="slide">
-      <div class="content">
+      <div class="content large">
         <h4>Cupcake ipsum dolor sit. Amet jelly chupa chups jujubes gummi bears macaroon sesame snaps. Danish wypas chocolate cake candy I love oat cake jujubes soufflé ice cream.</h4>
         <p>Marshmallow wafer bear claw soufflé muffin. Marzipan toffee toffee dessert chupa chups pie I love donut. Cheesecake cupcake fruitcake jelly-o. Dessert I love marzipan jelly-o dessert jujubes jujubes. I love wypas carrot cake apple pie donut halvah. Donut bonbon apple pie ice cream. Jelly cupcake dragée cake tootsie roll.</p>
         <q>Design director: Juan Pablo Mejía / Designers: Santiago Reyes, Nicolás Galeano, Juan Pablo Mejía / Photography: Kai Van Tongeren / Production: Ana Montenegro / Content & Direction: Alexandra Posada & Juan Pablo Fernández. 2011.</q>
@@ -127,6 +217,18 @@
 <script src="http://malsup.github.com/jquery.cycle.all.js"></script>
 <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script src="js/monocromo.js"></script>
+	<script type="text/javascript">
+	   var size = function() {
+       	var newHeight = $(window).height();
+        	$('article.project').height(newHeight);}
+		$(window).on('resize', size);
+    	size();
+		$('.prev, .next').click(function () {
+		var $parent = $(this).parents('.project');					
+		$.scrollTo($parent, 1000);
+		
+	});
+	</script>
 <!--
 <script src="js/jquery.fittext.js"></script>
 	<script type="text/javascript">
