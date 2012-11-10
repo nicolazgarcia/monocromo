@@ -46,6 +46,7 @@ nav#home ul li {
 nav#home ul:first-child li:first-child,
 nav#home ul:first-child li a
 */
+nav#home ul.home li.sub { z-index:3;}
 nav#home ul.home li.sub,
 nav#home ul.home li a{
 	position:relative;
@@ -65,17 +66,22 @@ nav#home ul.home li a:before {
 	-ms-transition: 0.22s linear all;
 	transition: 0.22s linear all;
 	}
+nav#home ul.nav li.sub:hover a:before,	
 nav#home ul.nav li a:hover:before {
 	display:block;
 	}
+nav#home ul.nav li.sub:hover a + ul.sub a:before {display:none;}
+nav#home ul.nav li.sub:hover a + ul.sub a:hover:before { display:block;}
+
 nav ul.nav li.sub:hover ul.sub {display:block !important;}
 nav#home ul.sub {
 	display:none;
+	overflow:hidden;
 	position:absolute;
-	bottom:-30px;
+	bottom:-34px;
 	background:#1A1A1A;
 	height:30px;
-	line-height:30px;
+	line-height:22px;
 	z-index:10;
 	}	
 nav#home ul.sub li {
@@ -218,21 +224,22 @@ footer h1.logo {
 	background-position:-15px -34px;
 	}
 /*---- columna izquierda home ----*/
-section#col_latest {
+section#col_latest,
+section#mono_options {
 	width:12%;
 	max-width:174px;
 	min-width:140px;
+	padding:10px;
+	z-index:11;
+	}
+section#col_latest {	
 	float:left;
 	position:fixed;
-	padding:10px;
-}
+	}
 section#mono_options {
-	width:174px;
-	position:absolute;
-	padding:10px;
+	position:absolute;	
 	top:0;
-	left:0;
-	z-index:11;
+	left:0;	
 	}
 ul.language,
 section#col_latest h1, 
@@ -593,12 +600,76 @@ text-rendering: optimizeSpeed;
 }
 }
 @media screen and (max-width: 1024px) {
+	.about_slideshow { position:fixed;}
+	.about_slideshow img { width:150%;}
+	
 }
 @media screen and (max-width: 960px) {
+	.blog header.top_h { height: 240px; margin-bottom:20px;}
 }
 @media screen and (max-width: 768px) {
+	section#mono_options,
+	section#col_latest { position:fixed; top:0; left:0; min-width:120px;}
+	section#col_latest article { display:none;}
+	nav#home { width:100%; float:none;}
+	nav#home ul { line-height:110px; margin: 56px auto 0px;}
+	nav#home ul li { font-size:157px;}
+	nav#home ul.sub { max-width:90%; left:5%; bottom: -32px; height: 27px;}
+	nav#home ul.sub li a {margin-right: 10px;}
+	nav#home ul.sub li { font-size:20px; top: -47px;}
+	
+	section#portfolio { width:90%;}
+	
+	section.blog { width:100%; margin:0;}
+	section.blog article { margin-left:140px;}
+	section.blog .content {width:62%;}
+	section.blog .content h3 { line-height:33px;}
+	section.blog .right_cl { margin:38px 0 0 8%;}
+	section.blog .top_article { width:100%; height:180px;}
+	
+	.about_slideshow img { width:180%;}
 }
 @media screen and (max-width: 600px) {
+	section.blog .top_article img { width:120%;}
+	.about_slideshow img { width:200%;}
 }
 @media screen and (max-width: 320px) {
+	nav#home ul { line-height:40px; margin-top:68px;}
+	nav#home ul li { font-size:82px;}
+	nav#home ul.nav li.sub:hover ul.sub { display:none !important;}
+	
+	nav#inter {top:45px;}
+	nav#inter ul.sub li:nth-child(3) { display:none;}
+	
+	section#mono_options,
+	section#col_latest { width:100%;}
+	section#mono_options header,
+	section#col_latest header{ float:left;}
+	
+	section#portfolio { width:100%;}
+	section#portfolio article { width:147px;}
+	
+	ul.language{ display:inline-block; border:none; border-left:2px solid #1A1A1A; margin:6px 0 0 6px; padding:0 0 0 6px; }
+	footer { display:none;}
+	
+	.about_slideshow img { width:250%;}
+	
+	.blog header.top_h { height:180px;}
+	.blog header.top_h  img { width:140%;}
+	section.blog article { margin:10px;}
+	section.blog .top_article { height:100px; margin:20px 0 10px;}
+	section.blog .content { width:100%; float:none;}
+	section.blog .right_cl { margin:0; width:100%; float:none;}
+	section.blog .right_cl b { display:block; margin-top:6px;}
+	section.blog .right_cl .tags li { display:inline-block;}
+	section.blog .right_cl .tags li:after { content:','; display:inline-block;}
+	section.blog .right_cl .tags li:last-child:after { content:'.'}
+	
+	.content.large { width:94%; margin:90px 3% 0; padding-bottom:40px;}
+	.content.large h4,
+	.content.large p {font-size:24px; line-height:30px;}
+	
+	article.project header h3 { margin-top:112px;}
+	
+	.project .content.large { margin-top:140px;}
 }
